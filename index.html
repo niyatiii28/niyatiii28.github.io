@@ -1,100 +1,69 @@
-import { useEffect } from "react";
-import { motion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niyati | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in-out both;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-pink-100 via-white to-yellow-100 text-gray-800 font-sans">
 
-export default function Portfolio() {
-  useEffect(() => {
-    document.title = "Niyati | Portfolio";
-  }, []);
+  <!-- Header -->
+  <header class="text-center py-12 fade-in">
+    <h1 class="text-4xl font-bold text-pink-600">Hi, I'm Niyati 👋</h1>
+    <p class="mt-3 text-lg">A passionate Web Developer & Creative Coder from India</p>
+  </header>
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-100 via-white to-yellow-100 p-6 font-sans">
-      <header className="text-center py-10">
-        <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold text-pink-600"
-        >
-          Hi, I'm Niyati 👋
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-          className="mt-4 text-gray-700 text-lg"
-        >
-          A passionate Web Developer & Creative Coder from India
-        </motion.p>
-      </header>
+  <!-- About Me -->
+  <section class="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-2xl mb-8 fade-in">
+    <h2 class="text-2xl font-semibold text-pink-500 mb-4">About Me</h2>
+    <p>
+      I'm a web developer who loves building responsive and interactive websites using HTML, CSS, and JavaScript.
+      I enjoy solving problems with code, creating fun animations, and continuously learning new tech.
+      I'm open to freelance opportunities and collaborations!
+    </p>
+  </section>
 
-      <motion.section
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.7 }}
-        className="max-w-4xl mx-auto bg-white p-6 rounded-2xl shadow-md mb-10"
-      >
-        <h2 className="text-2xl font-semibold text-pink-500 mb-4">About Me</h2>
-        <p className="text-gray-700 leading-relaxed">
-          I'm a web developer who loves building responsive and interactive websites using React, HTML, CSS, and JavaScript. I also enjoy solving problems with code, creating fun animations, and continuously learning new tech. I'm open to freelance opportunities and collaborations!
-        </p>
-      </motion.section>
+  <!-- Projects -->
+  <section class="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-2xl mb-8 fade-in">
+    <h2 class="text-2xl font-semibold text-pink-500 mb-4">Projects</h2>
+    <ul class="list-disc pl-6 space-y-4">
+      <li>
+        <strong>Book Library App</strong><br>
+        A React-based app to manage and favorite books with a beautiful pastel theme.
+      </li>
+      <li>
+        <strong>Music Mood Analyzer</strong><br>
+        An AI-based system that detects mood from music and displays recommendations.
+      </li>
+    </ul>
+  </section>
 
-      <motion.section
-        initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.7 }}
-        className="max-w-4xl mx-auto bg-white p-6 rounded-2xl shadow-md mb-10"
-      >
-        <h2 className="text-2xl font-semibold text-pink-500 mb-4">Projects</h2>
-        <ul className="space-y-4">
-          <li className="border-l-4 border-pink-300 pl-4">
-            <h3 className="text-lg font-bold">Book Library App</h3>
-            <p>A React-based app to manage and favorite books with a beautiful pastel theme.</p>
-          </li>
-          <li className="border-l-4 border-yellow-300 pl-4">
-            <h3 className="text-lg font-bold">Music Mood Analyzer</h3>
-            <p>An AI-based system that detects mood from music and displays recommendations.</p>
-          </li>
-        </ul>
-      </motion.section>
-
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="max-w-4xl mx-auto bg-white p-6 rounded-2xl shadow-md mb-10"
-      >
-        <h2 className="text-2xl font-semibold text-pink-500 mb-4">Contact</h2>
-        <div className="flex items-center gap-4">
-          <a
-            href="https://github.com/niyatishetty"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-700 hover:text-pink-500"
-          >
-            <Github />
-          </a>
-          <a
-            href="https://linkedin.com/in/niyatishetty"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-700 hover:text-pink-500"
-          >
-            <Linkedin />
-          </a>
-          <a
-            href="mailto:niyati@example.com"
-            className="text-gray-700 hover:text-pink-500"
-          >
-            <Mail />
-          </a>
-        </div>
-      </motion.section>
-
-      <footer className="text-center text-sm text-gray-500 py-6">
-        © 2025 Niyati Shetty. Made with 💖 using React and Tailwind CSS.
-      </footer>
+  <!-- Contact -->
+  <section class="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-2xl mb-8 fade-in">
+    <h2 class="text-2xl font-semibold text-pink-500 mb-4">Contact</h2>
+    <div class="flex gap-6 text-lg">
+      <a href="https://github.com/niyatishetty" class="hover:text-pink-600" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/niyatishetty" class="hover:text-pink-600" target="_blank">LinkedIn</a>
+      <a href="mailto:niyati@example.com" class="hover:text-pink-600">Email</a>
     </div>
-  );
-}
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-500 py-6 fade-in">
+    © 2025 Niyati Shetty. Made with 💖 using HTML & Tailwind CSS.
+  </footer>
+</body>
+</html>
